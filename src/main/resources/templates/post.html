@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<div style="float: left; width: 45%">
+    <img th:if="${post.picUrl != null}" th:src="@{/post/getImage(picUrl=${post.picUrl})}"  width="300"/>
+</div>
+<div style="float: left; width: 50%">
+    Date:  <span th:text="${post.createdDate}"></span><br/>
+  Title: <span th:text="${post.title}"></span>   <a th:href="@{/post/delete(id=${post.id})}">delete</a><br/>
+  Description:  <span th:text="${post.description}"></span><br/>
+  Category: <span th:text="${post.category.name}"></span><br/>
+    Text:<span th:text="${post.text}"></span>
+</div>
+</div>
+</body>
+</html>
